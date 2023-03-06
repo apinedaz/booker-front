@@ -1,0 +1,42 @@
+<div class="login" fxLayout="column" fxLayoutGap="12px">
+
+  <mat-card class="card-login">
+
+    <mat-card-title>POLI BOOKS</mat-card-title>
+
+    <mat-card-content>
+
+      <mat-card class="content-card-login">
+
+        <form [formGroup]="loginForm">
+
+          <div fxLayout="column" fxLayoutGap="12px">
+
+            <mat-form-field>
+
+              <mat-label>USUARIO</mat-label>
+              <input type="text" matInput formControlName="user" required>
+              <mat-icon matSuffix>person_outline</mat-icon>
+
+            </mat-form-field>
+
+            <mat-form-field>
+
+              <mat-label>CLAVE</mat-label>
+              <input type="password" matInput formControlName="password" required>
+              <mat-icon matSuffix>lock</mat-icon>
+
+            </mat-form-field>
+
+            <button [disabled]="!loginForm.valid" mat-raised-button color="primary" >Entrar
+
+              <mat-icon>home</mat-icon>
+
+            </button>
+
+          </div>
+        </form>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>
