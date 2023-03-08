@@ -1,0 +1,32 @@
+<mat-toolbar>
+
+  <button [matMenuTriggerFor]="menu" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="spacer"></span>
+
+  <img class="img" src="assets/logo.png" fxLayout="column" fxLayoutGap="12px">
+  <span class="spacer"></span>
+
+  <button aria-label="Usuario" mat-icon-button>
+    <mat-icon>person_outline</mat-icon>
+  </button>
+
+  <button aria-label="Inicio" mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
+  <button aria-label="Cerrar Sesion" (click)="logout()" mat-icon-button>
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu #menu="matMenu">
+
+  <span *ngFor="let opt of option">
+    <button class="mn" mat-menu-item >
+      <mat-icon color="primary">{{opt.icon}}</mat-icon>
+      {{opt.nombre}}
+    </button>
+  </span>
+</mat-menu>
+

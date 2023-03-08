@@ -4,6 +4,8 @@
 
     <mat-card-title>POLI BOOKS</mat-card-title>
 
+    <img class="img-card-login" src="assets/logo.png" fxLayout="column" fxLayoutGap="12px">
+
     <mat-card-content>
 
       <mat-card class="content-card-login">
@@ -28,7 +30,7 @@
 
             </mat-form-field>
 
-            <button [disabled]="!loginForm.valid" mat-raised-button color="primary" >Entrar
+            <button [disabled]="!loginForm.valid" mat-raised-button color="primary" (click)="login()">Entrar
 
               <mat-icon>home</mat-icon>
 

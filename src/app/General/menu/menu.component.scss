@@ -1,0 +1,23 @@
+mat-toolbar{
+  background-color: #7D80B5;
+  color: #E2D9CA;
+  margin: 0 0 1%;
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+// .mn{
+//   -webkit-text-fill-color: #E2D9CA;
+// }
+
+.mat-menu-content:not(:empty){
+  padding: 0%;
+  background: #7D80B5;
+}
+
+.img{
+  height: 90%;
+
+}

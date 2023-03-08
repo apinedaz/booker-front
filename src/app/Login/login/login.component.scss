@@ -17,6 +17,10 @@
   text-align: center !important;
   border: 10%;
 }
+mat-form-field{
+  padding-right: 5%;
+  width: 45% !important;
+}
 
 mat-card-title{
   color:#008EA2;
@@ -28,4 +32,12 @@ mat-card-content{
 }
 mat-label{
   color: #008EA2;
+}
+
+.img-card-login{
+  background-color: transparent;
+  width: 15%;
+  margin: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
