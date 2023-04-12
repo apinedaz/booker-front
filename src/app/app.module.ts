@@ -18,6 +18,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { HomeComponent } from './Pages/home/home.component';
 import { MenuComponent } from './General/menu/menu.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { MenuComponent } from './General/menu/menu.component';
     ReactiveFormsModule,
     MatInputModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

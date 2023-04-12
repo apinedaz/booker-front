@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { Login } from 'src/app/Models/login';
+import { AuthService } from 'src/app/Services/auth.service';
+import { lastValueFrom } from 'rxjs'
 
 @Component({
   selector: 'app-login',
@@ -12,18 +15,30 @@ export class LoginComponent {
   public loginForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private router:Router){
+              private router:Router,
+              private authService: AuthService){
 
     this.loginForm = this.fb.group({
 
-      user: new FormControl(null, {validators:[Validators.required]}),
+      username: new FormControl(null, {validators:[Validators.required]}),
       password: new FormControl(null, {validators:[Validators.required]})
 
     });
 
   }
   public login(): void{
-    this.router.navigate(['home']);
+
+    let login = this.loginForm.value as Login;
+
+    lastValueFrom(this.authService.auth(login)).then(response =>{
+      if(response.success){
+        localStorage.setItem("token",response.data);
+        this.router.navigate(['home']);
+      }
+    }).catch(error =>{
+      console.log(error);
+    })
+    
   }
 
 
