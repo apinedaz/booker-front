@@ -24,6 +24,7 @@ export class MenuComponent {
   }
 
   public logout():void{
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 }

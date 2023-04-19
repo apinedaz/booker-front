@@ -1,19 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Login } from '../Models/login';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Book } from '../Models/Book';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class BookService {
 
-  private url_api: string = `${environment.urlApi}/auth/`;
+  private url_api: string = `${environment.urlApi}/book`;
 
   constructor(private http: HttpClient) { }
 
-  public auth(login: Login): Observable<any>{
-    return this.http.post<any>(this.url_api,login);
+  public getAll():Observable<any>{
+    return this.http.get<any>(`${this.url_api}/get-all`);
   }
 }

@@ -4,6 +4,7 @@ import { Route, Router } from '@angular/router';
 import { Login } from 'src/app/Models/login';
 import { AuthService } from 'src/app/Services/auth.service';
 import { lastValueFrom } from 'rxjs'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +35,12 @@ export class LoginComponent {
       if(response.success){
         localStorage.setItem("token",response.data);
         this.router.navigate(['home']);
+      } else{
+        Swal.fire({
+          text: response.message,
+          icon:'error',
+        })
+        console.log(response.message);
       }
     }).catch(error =>{
       console.log(error);

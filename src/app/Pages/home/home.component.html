@@ -1,4 +1,26 @@
 <div class="home">
   <app-menu></app-menu>
 
+  <div *ngFor="let book of books" class="show">
+
+    <mat-card>
+      <mat-card-title>
+        {{book.name}}
+      </mat-card-title>
+
+      <img class="img-card-login" src="{{book.url}}" fxLayout="column" fxLayoutGap="12px">
+
+      <mat-card-content>
+
+        <span *ngFor="let i of numSequence(book.quality)">
+
+          <mat-icon>stars</mat-icon>
+        </span>
+      </mat-card-content>
+      <mat-card-footer>
+        {{book.description}}
+      </mat-card-footer>
+    </mat-card>
+  </div>
 </div>
+
