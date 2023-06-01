@@ -39,13 +39,12 @@ export class LoginComponent {
         Swal.fire({
           text: response.message,
           icon:'error',
-        })
-        console.log(response.message);
+        });
       }
     }).catch(error =>{
       console.log(error);
     })
-    
+
   }
 
 

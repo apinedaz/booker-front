@@ -23,11 +23,9 @@ export class HomeComponent implements OnInit{
     lastValueFrom( this.bookService.getAll()).then( result =>{
       if(result.success){
         this.books = result.data;
-        console.log(result.data);
       }
     }).catch();
 
-    console.log(this.books);
   }
 
 

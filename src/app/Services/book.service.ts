@@ -14,6 +14,6 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   public getAll():Observable<any>{
-    return this.http.get<any>(`${this.url_api}/get-all`);
+    return this.http.get<any>(`${this.url_api}/getAll`);
   }
 }

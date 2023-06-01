@@ -20,13 +20,17 @@ import { HomeComponent } from './Pages/home/home.component';
 import { MenuComponent } from './General/menu/menu.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth-interceptor.service';
+import { SolicitudeFormComponent } from './Pages/Solicitude/solicitude-form/solicitude-form.component';
+import { BookComponent } from './Pages/book/book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    SolicitudeFormComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
